@@ -1,8 +1,8 @@
 function addProduct() {
 
-	var preId = document.getElementById("productID").value;
+	var preId = document.getElementById("productId").value;
 	var preOwner = "resource:xchain.logistics.Trader#"
-	var ownerConcat = document.getElementById("OwnerID").value;
+	var ownerConcat = document.getElementById("OwnerId").value;
     var preDescription = document.getElementById("Description").value;
     var Id = String(preId);
     var Description = String(preDescription);
@@ -21,22 +21,22 @@ function addProduct() {
 }
 function addTrader() {
 
-    var preId = document.getElementById("TraderID").value;
+    var preId = document.getElementById("TraderId").value;
+	console.log(preId);
     var prePassword = document.getElementById("password").value;
     var preName = document.getElementById("Name").value;
     var Id = String(preId);
     var Password = String(prePassword);
     var Name = String(preName);
+	console.log(Id);
 	var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
-	xmlhttp.open("POST", "http://localhost:3000/api/xchain.logistics.Product");
+	xmlhttp.open("POST", "http://localhost:3000/api/xchain.logistics.Trader");
 	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-	var a = String(id);
-	console.log(a);
 	var jsonAdd = {};
 	jsonAdd["$class"] ="xchain.logistics.Trader" ;
 	jsonAdd["traderId"] = Id;
 	jsonAdd["password"] = Password ;
-	jsonAdd["owner"] = Name;
+	jsonAdd["name"] = Name;
 	xmlhttp.send(JSON.stringify(jsonAdd));
 }
 
