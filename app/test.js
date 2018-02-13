@@ -28,3 +28,43 @@ function backtracking() {
   };
   req.send();
 }
+
+function addProduct() {
+	var preId = document.getElementById("productId").value;
+	var preOwner = "resource:xchain.logistics.Trader#"
+	var ownerConcat = document.getElementById("OwnerId").value;
+    var preDescription = document.getElementById("Description").value;
+    var Id = String(preId);
+    var Description = String(preDescription);
+    var ownerPost = String(ownerConcat);
+    var newOwner = preOwner.concat(ownerPost);
+	var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+	xmlhttp.open("POST", "http://localhost:3000/api/xchain.logistics.Product");
+	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	var jsonAdd = {};
+	jsonAdd["$class"] = "xchain.logistics.Product" ;
+	jsonAdd["productId"] = Id;
+	jsonAdd["description"] = Description ;
+	jsonAdd["owner"] =  newOwner;
+	xmlhttp.send(JSON.stringify(jsonAdd));
+}
+
+function addTrader() {
+    var preId = document.getElementById("TraderId").value;
+	console.log(preId);
+    var prePassword = document.getElementById("password").value;
+    var preName = document.getElementById("Name").value;
+    var Id = String(preId);
+    var Password = String(prePassword);
+    var Name = String(preName);
+	console.log(Id);
+	var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+	xmlhttp.open("POST", "http://localhost:3000/api/xchain.logistics.Trader");
+	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	var jsonAdd = {};
+	jsonAdd["$class"] ="xchain.logistics.Trader" ;
+	jsonAdd["traderId"] = Id;
+	jsonAdd["password"] = Password ;
+	jsonAdd["name"] = Name;
+	xmlhttp.send(JSON.stringify(jsonAdd));
+}
