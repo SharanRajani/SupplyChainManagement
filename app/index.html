@@ -90,11 +90,13 @@ margin-left: 0.75em;
 
 	<div id="content1">
 		<div class="title"><h2 style="margin:0 1em 1em 0" class="texth">Add Product</h2><br></div>
-		<label class="labelholder "><b><span class="formt">Password:</span></b></label>
+		<label class="labelholder "><b><span class="formt">OwnerId:</span></b></label>
 		<div class="textholder">
-		<input type="text" id="add_password" class="textb"></div>
+		<input type="text" id="OwnerId" class="textb"></div>
 		<br><label class="labelholder"><b><span class="formt">ProductID:</span></b></label>
-				<div class="textholder"><input type="text" id="add_productId" class="textb"><br></div>
+				<div class="textholder"><input type="text" id="productId" class="textb"><br></div>
+		<br><label class="labelholder"><b><span class="formt">Description:</span></b></label>
+		<div class="textholder"><input type="text" id="Description" class="textb"><br></div>
 		<!-- <input type="button" value = "submit" id="submit" onclick="App.addProduct()" /> -->
 		<button style="margin:1em 0em 0em 2em;font-size:1.3em" type="button" onclick="addProduct()">Add Product</button>
 		<div><br><label class="labelholder"><span class="formt">Status:</span></label>
@@ -104,10 +106,13 @@ margin-left: 0.75em;
 	</div>
 	<div id="content2">
 		<div class="title"><h2 style="margin:0 1em 1em 0" class="texth">Register User</h2><br></div>
-		<label class="labelholder"><b><span class="formt">Password:</span></b></label>
+		<label class="labelholder"><b><span class="formt">TraderID:</span></b></label>
 		<div class="textholder">
-		<input type="text" id="reg_password" class="textb"></div>
-		<br>
+		<input type="text" id="TraderID" class="textb"></div>
+		<br><label class="labelholder"><b><span class="formt">Password:</span></b></label>
+		<div class="textholder"><input type="text" id="password" class="textb"><br></div>
+		<br><label class="labelholder"><b><span class="formt">Name:</span></b></label>
+		<div class="textholder"><input type="text" id="Name" class="textb"><br></div>
 		<!-- <input type="button" value = "submit" id="submit" onclick="App.addProduct()" /> -->
 		<button style="margin:1em 0em 0em 2em;font-size:1.3em" type="button" onclick="registerUser()">Register</button>
 		<div><br><label class="labelholder"><span class="formt">Status:</span></label>
