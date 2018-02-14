@@ -27,6 +27,7 @@ function backtracking() {
     }
   };
   req.send();
+
 }
 
 function addProduct() {
@@ -67,4 +68,43 @@ function addTrader() {
 	jsonAdd["password"] = Password ;
 	jsonAdd["name"] = Name;
 	xmlhttp.send(JSON.stringify(jsonAdd));
+}
+
+
+function transferAsset(transfer) {
+    var buyer =String(transfer.buyer);
+    var seller = transfer.seller;
+    var product = transfer.product;
+  	var password = transfer.password;
+
+    if(password  == seller.password && product.owner.password==seller.password){
+		// var a = 0;
+    	return getParticipantRegistry('xchain.logistics.Trader')
+        .then(function(participant){
+			//var buyer1=
+      		return participant.exists(buyer);
+				}).then(function(exist){
+				//	console.log(exist);
+					console.log(buyer);
+						product.owner = buyer;
+					 })
+					 .catch(function (error) {
+			    		console.log("Error");
+					}).then(function(){	return getAssetRegistry('xchain.logistics.Product')})
+
+        				.then(function (assetRegistry) {
+  							var transferNotification = getFactory().newEvent('xchain.logistics', 'TransferNotification');
+           					transferNotification.buyer = buyer;
+             				transferNotification.seller = seller;
+             				transferNotification.product = product;
+           					emit(transferNotification);
+          					console.log('Updating Registry')
+          					return assetRegistry.update(transfer.product);
+        					});
+
+	}
+else{
+throw new Error('Seller doesn’t own product.’');
+console.log('Seller doesn’t own product. ');
+}
 }
