@@ -124,34 +124,25 @@ margin-left: 0.75em;
 		<span id="output2" style="margin:10em 0em 0em 1em;width:10em;height:3em;background-color:lightgrey;font-size: 1.5em">Placeholder</span>
 		</div> -->
 	</div>
-	<div id="content3">
-		<div class="title"><h2 style="margin:0 1em 1em 0" class="texth">Get Owner Address</h2><br></div>
-		<label class="labelholder"><b><span class="formt">Password:</span></b></label>
-		<div class="textholder">
-		<input type="text" id="get_password" class="textb"></div>
-		<br>
-		<!-- <input type="button" value = "submit" id="submit" onclick="App.addProduct()" /> -->
-		<button style="margin:1em 0em 0em 2em;font-size:1.3em" type="button" onclick="fetchOwnerHash()">Get</button>
-		<div id="status" style="margin-top:0.5em; color:blue;"></div>
 
-		<!-- <div><br><label class="labelholder"><span class="formt">Status:</span></label>
-		<span id="output3" style="margin:10em 0em 0em 1em;width:10em;height:3em;background-color:lightgrey;font-size: 1.5em">Placeholder</span>
-		</div> -->
-	</div>
 	<div id="content4">
 		<div class="title"><h2 style="margin:0 0em 1em -0.5em"class="texth">Transfer Ownership</h2><br></div>
+		<label class="labelholder "><b><span class="formt">Sender address:</span></b></label>
+		<div class="textholder">
+		<input type="text" id="sender_address" class="textb"></div><br>
 		<label class="labelholder "><b><span class="formt">Password	:</span></b></label>
 		<div class="textholder">
 		<input type="text" id="trans_password" class="textb"></div>
 		<br><label class="labelholder"><b><span class="formt">ProductID:</span></b></label>
 				<div class="textholder"><input type="text" id="trans_productId" class="textb"><br></div>
 				<br><label class="labelholder"><b><span class="formt">Receiver Address:</span></b></label>
-						<div class="textholder"><input type="text" id="trans_address" class="textb"><br></div>
+						<div class="textholder"><input type="text" id="receiver_address" class="textb"><br></div>
 		<!-- <input type="button" value = "submit" id="submit" onclick="App.addProduct()" /> -->
 		<button style="margin:1em 0em 0em 2em;font-size:1.3em" type="button" onclick="transfer()">Transfer</button>
 		<!-- <div><br><label class="labelholder"><span class="formt">Status:</span></label>
 		<span id="output4" style="margin:10em 0em 0em 1em;width:10em;height:3em;background-color:lightgrey;font-size: 1.5em">Placeholder</span>
 		</div> -->
+		<div id="status2" style="margin-top:1em; margin-left:1em;color:blue;"></div>
 	</div>
 	<div id="content5">
 		<div class="title"><h2 style="margin:0 1em 1em 0" class="texth">Get Ownership History</h2><br></div>
@@ -163,9 +154,9 @@ margin-left: 0.75em;
 		<button style="margin:1em 0em 0em 2em;font-size:1.3em" type="button" onclick="backtracking()">Get</button>
 		<div id="status" style="margin-top:0.5em; color:blue;"></div>
 
-		<!-- <div><br><label class="labelholder"><span class="formt">Status:</span></label>
+		<div><br><label class="labelholder"><span class="formt">Status:</span></label>
 		<span id="output5" style="width:10em;height:3em;font-size: 1.5em"></span>
-		</div> -->
+		</div>
 	</div>
 </div>
 </body>
