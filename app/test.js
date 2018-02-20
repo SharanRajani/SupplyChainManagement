@@ -27,9 +27,7 @@ function backtracking() {
     }
   };
   req.send();
-<<<<<<< HEAD
 
-=======
   if(xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
     console.log(xmlhttp.responseText);
     document.getElementById("status").innerHTML="Success!";
@@ -37,7 +35,6 @@ function backtracking() {
   else{
     document.getElementById("status").innerHTML="Failed!";
   }
->>>>>>> 87a8dd66f218384ce10c82c22fbdc1ec718e2c7a
 }
 
 function addProduct() {
@@ -56,8 +53,8 @@ function addProduct() {
 	jsonAdd["$class"] = "xchain.logistics.Product" ;
 	jsonAdd["productId"] = Id;
 	jsonAdd["description"] = Description ;
-	jsonAdd["owner"] =  newOwner;
 	xmlhttp.send(JSON.stringify(jsonAdd));
+  jsonAdd["owner"] =  newOwner;
   xmlhttp.onreadystatechange = function () {
   if(xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
     console.log(xmlhttp.responseText);
@@ -134,4 +131,8 @@ else{
 throw new Error('Seller doesn’t own product.’');
 console.log('Seller doesn’t own product. ');
 }
+}
+
+function transfer(){
+
 }
