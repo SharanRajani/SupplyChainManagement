@@ -27,7 +27,17 @@ function backtracking() {
     }
   };
   req.send();
+<<<<<<< HEAD
 
+=======
+  if(xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
+    console.log(xmlhttp.responseText);
+    document.getElementById("status").innerHTML="Success!";
+  }
+  else{
+    document.getElementById("status").innerHTML="Failed!";
+  }
+>>>>>>> 87a8dd66f218384ce10c82c22fbdc1ec718e2c7a
 }
 
 function addProduct() {
@@ -48,6 +58,16 @@ function addProduct() {
 	jsonAdd["description"] = Description ;
 	jsonAdd["owner"] =  newOwner;
 	xmlhttp.send(JSON.stringify(jsonAdd));
+  xmlhttp.onreadystatechange = function () {
+  if(xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
+    console.log(xmlhttp.responseText);
+    document.getElementById("status").innerHTML="Success!";
+  }
+  else{
+    document.getElementById("status").innerHTML="Failed!";
+  }
+};
+
 }
 
 function addTrader() {
@@ -68,6 +88,13 @@ function addTrader() {
 	jsonAdd["password"] = Password ;
 	jsonAdd["name"] = Name;
 	xmlhttp.send(JSON.stringify(jsonAdd));
+  if(xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
+    console.log(xmlhttp.responseText);
+    document.getElementById("status1").innerHTML="Success!";
+  }
+  else{
+    document.getElementById("status1").innerHTML="Failed!";
+  }
 }
 
 
