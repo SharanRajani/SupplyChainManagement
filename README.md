@@ -1,2 +1,2 @@
 # XSChain
-Management of Supply Chain and Logistics using Hyperledger Composer.
+Distributed Blockchain Application for Supply Chain and Logistics Management developed using Hyperledger Composer running on Hyperledger Fabric.
